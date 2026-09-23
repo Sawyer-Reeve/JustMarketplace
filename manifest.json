@@ -4,6 +4,14 @@
     "version": "0.1.0",
     "description": "A minimal Chrome extension that restricts Facebook to Marketplace.",
 
+    "permissions": [
+        "declarativeNetRequest"
+    ],
+
+    "host_permissions": [
+        "https://*.facebook.com/*"
+    ],
+
     "content_scripts": [
         {
             "matches": [
@@ -14,5 +22,15 @@
             ],
             "run_at": "document_start"
         }
-    ]
+    ],
+
+    "declarative_net_request": {
+        "rule_resources": [
+            {
+                "id": "facebook_rules",
+                "enabled": true,
+                "path": "rules.json"
+            }
+        ]
+    }
 }
