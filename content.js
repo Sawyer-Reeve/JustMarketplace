@@ -1,12 +1,18 @@
 const MARKETPLACE_PATH = "/marketplace";
+const MARKETPLACE_URL = "https://www.facebook.com/marketplace/";
 
-function checkPage() {
+function isMarketplacePage() {
     const path = window.location.pathname;
 
-    if (!path.startsWith(MARKETPLACE_PATH)) {
-        window.location.replace(
-            "https://www.facebook.com/marketplace"
-        );
+    return (
+        path === MARKETPLACE_PATH ||
+        path.startsWith(MARKETPLACE_PATH + "/")
+    );
+}
+
+function checkPage() {
+    if (!isMarketplacePage()) {
+        window.location.replace(MARKETPLACE_URL);
     }
 }
 

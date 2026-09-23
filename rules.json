@@ -6,7 +6,7 @@
             "type": "allow"
         },
         "condition": {
-            "urlFilter": "||facebook.com/marketplace",
+            "urlFilter": "|https://www.facebook.com/marketplace^",
             "resourceTypes": [
                 "main_frame"
             ]
@@ -22,7 +22,7 @@
             }
         },
         "condition": {
-            "urlFilter": "||facebook.com/",
+            "urlFilter": "|https://www.facebook.com/",
             "resourceTypes": [
                 "main_frame"
             ]
